@@ -5,10 +5,14 @@
     --blue-800: hsl(224deg, 36%, 15%);
     --blue-900: hsl(221deg, 14%, 31%);
     --white-100: hsl(0deg, 0%, 100%);
+    --white-200: hsl(0deg, 0%, 90%);
     --white-300: hsl(30deg, 25%, 89%);
+    --white-500: hsl(0deg, 5%, 81%);
     --white-600: hsl(30deg, 12%, 67%);
     --red-600: hsl(6deg, 63%, 50%);
-    --red-800: hsl(6, 75%, 35%);
+    --red-800: hsl(6deg, 75%, 35%);
+    --green-600: hsl(185deg, 42%, 37%);
+    --black-999: hsl(0, 0%, 0%);
 }
 
 *,
@@ -52,10 +56,11 @@ body {
     background-color: var(--blue-800);
 }
 
-.dark--theme .btn--input {
+.dark--theme .btn--input,
+.light--theme .btn--input {
     background-color: var(--white-300);
     border-color: var(--white-300);
-    color: var(--blue-900);
+    color: var(--black-999);
     box-shadow: 0 4px 0 0 var(--white-600);
 }
 
@@ -66,7 +71,8 @@ body {
     box-shadow: 0 4px 0 0 var(--blue-700);
 }
 
-.dark--theme .btn--equal {
+.dark--theme .btn--equal,
+.light--theme .btn--equal {
     background-color: var(--red-600);
     border-color: var(--red-600);
     color: var(--white-100);
@@ -78,6 +84,40 @@ body {
 }
 
 /* ---------------------------------------- */
+
+/* Light Theme */
+.light--theme {
+    background-color: var(--white-200);
+}
+
+.light--theme .calculator__header {
+    color: var(--black-999);
+}
+
+.light--theme .displayer__component {
+    background-color: var(--white-100);
+    color: var(--black-999);
+    font-size: 3.5rem;
+    text-align: right;
+}
+
+.light--theme .keyboard__component {
+    background-color: var(--white-500);
+}
+
+.light--theme .btn--remove {
+    background-color: var(--green-600);
+    border-color: var(--blue-600);
+    color: var(--white-100);
+    box-shadow: 0 4px 0 0 var(--blue-700);
+}
+
+.light--theme .radio__wrapper {
+    background-color: var(--white-500);
+}
+
+/* ---------------------------------------- */
+
 /* Calculator's Font */
 .page__heading {
     position: relative;
