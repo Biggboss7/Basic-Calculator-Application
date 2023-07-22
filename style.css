@@ -73,9 +73,20 @@ body {
     box-shadow: 0 4px 0 0 var(--red-800);
 }
 
+.dark--theme .radio__wrapper {
+    background-color: var(--blue-800);
+}
+
 /* ---------------------------------------- */
 /* Calculator's Font */
+.page__heading {
+    position: relative;
+    top: 8px;
+}
+
 .sub__heading {
+    position: relative;
+    top: 30px;
     font-size: .75rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -92,6 +103,45 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.theme__component {
+    width: 8.75rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.toggler__component {
+    width: 50%;
+}
+
+.radio__wrapper,
+.choices {
+    display: flex;
+    justify-content: space-around;
+}
+
+.choices {
+    position: relative;
+}
+
+.radio__wrapper {
+    margin-top: .5rem;
+    padding: .3rem .1rem;
+    border-radius: 1rem;
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: .8rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background-color: var(--red-600)
 }
 
 .calculator__body,
