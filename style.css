@@ -12,7 +12,16 @@
     --red-600: hsl(6deg, 63%, 50%);
     --red-800: hsl(6deg, 75%, 35%);
     --green-600: hsl(185deg, 42%, 37%);
+    --green-300: hsl(176deg, 100%, 44%);
+    --green-200: hsl(177deg, 92%, 70%);
     --black-999: hsl(0, 0%, 0%);
+    --purple-900: hsl(268deg, 75%, 9%);
+    --purple-800: hsl(268deg, 71%, 12%);
+    --purple-700: hsl(268deg, 47%, 21%);
+    --purple-600: hsl(281deg, 89%, 26%);
+    --purple-500: hsl(290deg, 70%, 36%);
+    --purple-400: hsl(285deg, 91%, 52%);
+    --yellow-600: hsl(52deg, 100%, 62%);
 }
 
 *,
@@ -114,6 +123,60 @@ body {
 
 .light--theme .radio__wrapper {
     background-color: var(--white-500);
+}
+
+/* ---------------------------------------- */
+
+/* Purplish Theme */
+.purplish--theme {
+    background-color: var(--purple-900);
+}
+
+.purplish--theme .calculator__header {
+    color: var(--yellow-600);
+}
+
+.purplish--theme .displayer__component {
+    background-color: var(--purple-800);
+    color: var(--yellow-600);
+    font-size: 3.5rem;
+    text-align: right;
+}
+
+.purplish--theme .keyboard__component {
+    background-color: var(--purple-800);
+}
+
+.purplish--theme .btn--input {
+    background-color: var(--purple-700);
+    border-color: var(--purple-700);
+    color: var(--yellow-600);
+    box-shadow: 0 4px 0 0 var(--purple-500);
+}
+
+.purplish--theme .btn--remove {
+    background-color: var(--purple-600);
+    border-color: var(--purple-600);
+    color: var(--white-100);
+    box-shadow: 0 4px 0 0 var(--purple-400);
+}
+
+.purplish--theme .radio__wrapper {
+    background-color: var(--white-500);
+}
+
+.purplish--theme .radio__wrapper {
+    background-color: var(--purple-800);
+}
+
+.purplish--theme input[type="radio"]:checked,
+.purplish--theme .btn--equal {
+    background-color: var(--green-300);
+}
+
+.purplish--theme .btn--equal {
+    border-color: var(--green-300);
+    box-shadow: 0 4px 0 0 var(--green-200);
 }
 
 /* ---------------------------------------- */
