@@ -61,6 +61,10 @@ body {
     text-align: right;
 }
 
+.dark--theme .displayer__component::placeholder {
+    color: var(--white-100);
+}
+
 .dark--theme .keyboard__component {
     background-color: var(--blue-800);
 }
@@ -110,6 +114,14 @@ body {
     text-align: right;
 }
 
+.light--theme #valueHolder {
+    color: var(--black-999);
+}
+
+.light--theme .displayer__component::placeholder {
+    color: var(--black-999);
+}
+
 .light--theme .keyboard__component {
     background-color: var(--white-500);
 }
@@ -141,6 +153,14 @@ body {
     color: var(--yellow-600);
     font-size: 3.5rem;
     text-align: right;
+}
+
+.purplish--theme #valueHolder {
+    color: var(--yellow-600);
+}
+
+.purplish--theme .displayer__component::placeholder {
+    color: var(--yellow-600);
 }
 
 .purplish--theme .keyboard__component {
@@ -247,13 +267,27 @@ input[type="radio"]:checked {
     background-color: var(--red-600)
 }
 
+.calculator__body {
+    position: relative;
+}
+
 .calculator__body,
 .keyboard__component {
     display: grid;
     gap: 1.5rem;
 }
 
+#valueHolder {
+    position: absolute;
+    top: 14px;
+    right: 34px;
+    font-size: 1.5rem;
+    color: var(--white-100);
+    letter-spacing: .5rem;
+}
+
 .displayer__component {
+    width: 100%;
     padding: 2rem 1.5rem;
     border-radius: 10px;
 }
