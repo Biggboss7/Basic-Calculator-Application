@@ -5,6 +5,7 @@ const btnNumberEl = document.querySelectorAll(".btn--number");
 const btnOperationEl = document.querySelectorAll(".btn--operation");
 const zeroBtnEl = document.getElementById("0");
 const btnDelEl = document.querySelector(".btn--remove");
+const btnEqualEl = document.querySelector(".btn--equal");
 const commaBtnEl = document.getElementById(".");
 const valueHolderEl = document.querySelector("#valueHolder");
 let counter = 0;
@@ -85,6 +86,7 @@ for (const btn of btnNumberEl) {
 function calculatorOperation(e) {
     const operationSign = e.target.id;
     calculator.operation = operationSign;
+    for (const btn of btnNumberEl) btn.disabled = false;
 
     commaBtnEl.disabled = false;
 
@@ -123,3 +125,15 @@ function delNumber() {
     monitorEl.value = clickedNumber.join("");
 }
 btnDelEl.addEventListener("click", delNumber);
+
+// Equal Function
+function equals() {
+    valueHolderEl.textContent = "";
+    for (const btn of btnNumberEl) btn.disabled = true;
+    btnDelEl.disabled = true;
+    clickedNumber = [calculator.result];
+    monitorEl.value = clickedNumber.join("");
+};
+
+btnEqualEl.addEventListener("click", equals);
+
