@@ -279,16 +279,16 @@ input[type="radio"]:checked {
 
 #valueHolder {
     position: absolute;
-    top: 14px;
+    top: 24px;
     right: 34px;
     font-size: 1.5rem;
     color: var(--white-100);
-    letter-spacing: .5rem;
+    letter-spacing: 2px;
 }
 
 .displayer__component {
     width: 100%;
-    padding: 2rem 1.5rem;
+    padding: 2.8rem 1.5rem 2rem;
     border-radius: 10px;
 }
 
