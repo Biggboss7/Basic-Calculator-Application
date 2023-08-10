@@ -281,7 +281,7 @@ input[type="radio"]:checked {
     position: absolute;
     top: 24px;
     right: 34px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--white-100);
     letter-spacing: 2px;
 }

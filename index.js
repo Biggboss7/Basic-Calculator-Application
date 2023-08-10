@@ -2,7 +2,9 @@
 const themeRadiosElList = document.querySelectorAll("input[type='radio']");
 const monitorEl = document.querySelector("#calculator__monitor");
 const btnNumberEl = document.querySelectorAll(".btn--number");
-const btnOperationEl = document.querySelectorAll(".btn--operation"); const zeroBtnEl = document.getElementById("0");
+const btnOperationEl = document.querySelectorAll(".btn--operation");
+const zeroBtnEl = document.getElementById("0");
+const btnDelEl = document.querySelector(".btn--remove");
 const commaBtnEl = document.getElementById(".");
 const valueHolderEl = document.querySelector("#valueHolder");
 let counter = 0;
@@ -110,3 +112,14 @@ for (const btn of btnOperationEl) {
     btn.addEventListener("click", calculatorOperation);
     btn.disabled = true;
 }
+
+// Function to Delete Numbers
+function delNumber() {
+    clickedNumber.pop();
+    calculator.object = Number(clickedNumber.join(""));
+    if (calculator.subject !== undefined && calculator.operation && calculator.object !== undefined) {
+        calculator[calculator.operation]();
+    }
+    monitorEl.value = clickedNumber.join("");
+}
+btnDelEl.addEventListener("click", delNumber);
