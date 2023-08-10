@@ -40,6 +40,7 @@ html {
 body {
     min-height: 100vh;
     display: flex;
+    padding: 1rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -328,4 +329,18 @@ input[type="radio"]:checked {
 .btn:active {
     transform: translateY(4px);
     box-shadow: 1px 1px 1px 1px black inset;
+}
+
+
+@media only screen and (max-width: 560px) {
+
+    .calculator__header,
+    .calculator__body {
+        width: 22.75rem;
+    }
+
+    .keyboard__component {
+        padding: 1.2rem;
+        gap: 1rem;
+    }
 }

@@ -6,11 +6,9 @@ const btnOperationEl = document.querySelectorAll(".btn--operation");
 const zeroBtnEl = document.getElementById("0");
 const btnDelEl = document.querySelector(".btn--remove");
 const btnEqualEl = document.querySelector(".btn--equal");
-btnEqualEl.disabled = true;
 const btnResetEl = document.querySelector(".btn--reset");
 const commaBtnEl = document.getElementById(".");
 const valueHolderEl = document.querySelector("#valueHolder");
-let counter = 0;
 let clickedNumber = [];
 let holdNumber = [null, null];
 
@@ -116,7 +114,6 @@ function calculatorOperation(e) {
 
 for (const btn of btnOperationEl) {
     btn.addEventListener("click", calculatorOperation);
-    btn.disabled = true;
 }
 
 // Function to Delete Numbers
