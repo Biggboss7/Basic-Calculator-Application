@@ -6,6 +6,7 @@ const btnOperationEl = document.querySelectorAll(".btn--operation");
 const zeroBtnEl = document.getElementById("0");
 const btnDelEl = document.querySelector(".btn--remove");
 const btnEqualEl = document.querySelector(".btn--equal");
+const btnResetEl = document.querySelector(".btn--reset");
 const commaBtnEl = document.getElementById(".");
 const valueHolderEl = document.querySelector("#valueHolder");
 let counter = 0;
@@ -21,10 +22,10 @@ const calculator = {
         this.result = this.subject - this.object;
     },
     "*": function () {
-        this.result = Math.round(this.subject * this.object * 1000) / 1000;
+        this.result = this.subject * this.object;
     },
     "/": function () {
-        this.result = Math.round(this.subject / this.object * 1000) / 1000;
+        this.result = this.subject / this.object;
     }
 };
 
@@ -89,6 +90,7 @@ function calculatorOperation(e) {
     for (const btn of btnNumberEl) btn.disabled = false;
 
     commaBtnEl.disabled = false;
+    btnDelEl.disabled = false;
 
     if (calculator.object === undefined) {
         holdNumber[holdNumber.length - 1] = operationSign;
@@ -118,7 +120,11 @@ for (const btn of btnOperationEl) {
 // Function to Delete Numbers
 function delNumber() {
     clickedNumber.pop();
-    calculator.object = Number(clickedNumber.join(""));
+    if (clickedNumber.length > 0) {
+        calculator.object = Number(clickedNumber.join(""));
+    }
+    else delete calculator.object;
+
     if (calculator.subject !== undefined && calculator.operation && calculator.object !== undefined) {
         calculator[calculator.operation]();
     }
@@ -136,4 +142,21 @@ function equals() {
 };
 
 btnEqualEl.addEventListener("click", equals);
+
+// Function to reset calculator
+function resetCalculator() {
+    calculator.result = undefined;
+    valueHolderEl.textContent = "";
+    monitorEl.value = "";
+    holdNumber = [null, null];
+    clickedNumber = [];
+    delete calculator.subject;
+    delete calculator.object;
+    delete calculator.operation;
+    for (const btn of btnNumberEl) btn.disabled = false;
+    for (const btn of btnOperationEl) btn.disabled = true;
+    btnDelEl.disabled = false;
+};
+
+btnResetEl.addEventListener("click", resetCalculator);
 
