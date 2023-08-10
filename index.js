@@ -6,6 +6,7 @@ const btnOperationEl = document.querySelectorAll(".btn--operation");
 const zeroBtnEl = document.getElementById("0");
 const btnDelEl = document.querySelector(".btn--remove");
 const btnEqualEl = document.querySelector(".btn--equal");
+btnEqualEl.disabled = true;
 const btnResetEl = document.querySelector(".btn--reset");
 const commaBtnEl = document.getElementById(".");
 const valueHolderEl = document.querySelector("#valueHolder");
@@ -64,6 +65,7 @@ for (const radio of themeRadiosElList) {
 function displayNumber(e) {
     const number = e.target.id;
     for (const btn of btnOperationEl) btn.disabled = false;
+    btnEqualEl.disabled = false;
 
     if (number === ".") {
         if (clickedNumber.length === 0) clickedNumber.push("0", number);
@@ -99,7 +101,7 @@ function calculatorOperation(e) {
         if (holdNumber[0] === null) {
             holdNumber[0] = calculator.subject;
         } else {
-            holdNumber[0] = (calculator.result);
+            holdNumber[0] = Math.round(calculator.result * 1000) / 1000;
             calculator.subject = calculator.result;
         }
         holdNumber[1] = calculator.operation;
@@ -137,7 +139,9 @@ function equals() {
     valueHolderEl.textContent = "";
     for (const btn of btnNumberEl) btn.disabled = true;
     btnDelEl.disabled = true;
-    clickedNumber = [calculator.result];
+
+    clickedNumber = [calculator.result || calculator.object || calculator.subject];
+
     monitorEl.value = clickedNumber.join("");
 };
 
