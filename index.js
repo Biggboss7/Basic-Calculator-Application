@@ -157,6 +157,7 @@ function resetCalculator() {
     for (const btn of btnNumberEl) btn.disabled = false;
     for (const btn of btnOperationEl) btn.disabled = true;
     btnDelEl.disabled = false;
+    btnEqualEl.disabled = true;
 };
 
 btnResetEl.addEventListener("click", resetCalculator);
